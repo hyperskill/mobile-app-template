@@ -8,3 +8,15 @@ plugins {
     alias(libs.plugins.kotlinCocoapods).apply(false)
     alias(libs.plugins.compose.compiler).apply(false)
 }
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://maven.pkg.github.com/eadm/AndroidKit")
+    }
+}
+
+tasks.register("clean", Delete::class) {
+    delete(rootProject.layout.buildDirectory)
+}
