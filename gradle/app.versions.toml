@@ -1,0 +1,9 @@
+[versions]
+minSdk = '24'
+targetSdk = '34'
+compileSdk = '34'
+buildToolsVersion = '34.0.0'
+jvmToolchain = '21'
+iosDeploymentTarget = '17.0'
+versionName = '1'
+versionCode = '1'
