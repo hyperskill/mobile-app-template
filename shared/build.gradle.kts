@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+
 plugins {
     alias(libs.plugins.example.multiplatform)
     alias(libs.plugins.kotlinCocoapods)
@@ -20,5 +22,12 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
         }
+    }
+
+    // https://kotlinlang.org/docs/multiplatform-expect-actual.html#expected-and-actual-classes
+    // To suppress this warning about usage of expected and actual classes
+    @OptIn(ExperimentalKotlinGradlePluginApi::class)
+    compilerOptions {
+        freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 }
