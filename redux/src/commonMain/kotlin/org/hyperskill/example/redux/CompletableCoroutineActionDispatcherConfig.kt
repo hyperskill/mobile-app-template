@@ -1,4 +1,4 @@
-package org.hyperskill.edvancium.redux
+package org.hyperskill.example.redux
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler

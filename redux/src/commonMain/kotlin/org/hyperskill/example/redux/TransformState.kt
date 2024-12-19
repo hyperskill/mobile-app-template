@@ -1,4 +1,4 @@
-package org.hyperskill.edvancium.redux
+package org.hyperskill.example.redux
 
 import ru.nobird.app.core.model.Cancellable
 import ru.nobird.app.presentation.redux.feature.Feature
