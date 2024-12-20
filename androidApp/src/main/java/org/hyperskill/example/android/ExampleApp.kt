@@ -1,9 +1,10 @@
 package org.hyperskill.example.android
 
 import android.app.Application
-import org.hyperskill.example.android.base.isMainProcess
+import org.hyperskill.example.android.base.model.AndroidBuildVariant
+import org.hyperskill.example.android.base.model.AndroidPlatform
+import org.hyperskill.example.android.framework.isMainProcess
 import org.hyperskill.example.android.injection.AndroidAppGraph
-import org.hyperskill.example.android.injection.AndroidAppGraphBuilder
 
 class ExampleApp : Application() {
     companion object {
@@ -25,8 +26,18 @@ class ExampleApp : Application() {
         super.onCreate()
         if (!isMainProcess) return
 
+        // TODO: Uncomment it once you add real value to SHARED_ANDROID_SENTRY_DSN in /config/production.properties file
+        /*SentryInitializer.init(
+            platform = AndroidPlatform,
+            buildVariant = AndroidBuildVariant
+        )*/
+
         _application = this
 
-        graph = AndroidAppGraphBuilder.build(this)
+        graph = AndroidAppGraph(
+            context = this,
+            platform = AndroidPlatform,
+            buildVariant = AndroidBuildVariant
+        )
     }
 }

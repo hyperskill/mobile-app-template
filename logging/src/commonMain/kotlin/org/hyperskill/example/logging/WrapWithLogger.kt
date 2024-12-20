@@ -1,4 +1,4 @@
-package org.hyperskill.example
+package org.hyperskill.example.logging
 
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.Severity

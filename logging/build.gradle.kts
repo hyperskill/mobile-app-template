@@ -9,6 +9,7 @@ kotlin {
                 implementation(project(":base"))
                 implementation(project(":redux"))
                 implementation(libs.kermit)
+                implementation(libs.sentry.common)
             }
         }
     }

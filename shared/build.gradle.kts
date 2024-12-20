@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 plugins {
     alias(libs.plugins.example.multiplatform)
     alias(libs.plugins.kotlinCocoapods)
+    alias(libs.plugins.buildConfig)
 }
 
 kotlin {
@@ -19,6 +20,11 @@ kotlin {
             // Add export declarations to use base module from Swift side
             export(project(":base"))
         }
+        pod("Sentry") {
+            version = libs.versions.sentry.cocoapods.get()
+            linkOnly = true
+            extraOpts += listOf("-compiler-option", "-fmodules")
+        }
     }
     
     sourceSets {
@@ -26,6 +32,7 @@ kotlin {
             api(project(":base"))
             implementation(project(":logging"))
             implementation(project(":network"))
+            implementation(libs.sentry.common)
             //put your multiplatform dependencies here
         }
     }
@@ -36,4 +43,19 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
+}
+
+buildConfig {
+    packageName = "org.hyperskill.example.config"
+    className = "SharedBuildConfig"
+
+    useKotlinOutput {
+        internalVisibility = true
+    }
+
+    addBuildConfigFieldsByPrefix(
+        project = project,
+        pathToPropertiesFile = "${project.rootDir}/config/production.properties",
+        prefix = "SHARED"
+    )
 }

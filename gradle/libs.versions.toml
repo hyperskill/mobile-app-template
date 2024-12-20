@@ -10,6 +10,9 @@ androidxLifecycle = "2.8.5"
 androidx-activityCompose = "1.8.0"
 reduxKit = "1.3.1"
 kermit = "2.0.4"
+sentry-common = "0.10.0"
+sentry-AndroidGradlePlugin = "4.11.0"
+sentry-cocoapods = "8.38.0"
 buildConfig = "5.5.1"
 
 [libraries]
@@ -41,6 +44,7 @@ kit-presentation-redux = { module = "ru.nobird.app.presentation:presentation-red
 kit-presentation-reduxCoroutines = { module = "ru.nobird.app.presentation:presentation-redux-coroutines", version.ref = "reduxKit" }
 
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+sentry-common = { module = "io.sentry:sentry-kotlin-multiplatform", version.ref = "sentry-common" }
 
 [bundles]
 ktor-common = ['ktor-core', 'ktor-serialization', 'ktor-serialization-json', 'ktor-contentNegotiation', 'ktor-logging' ]
@@ -54,6 +58,8 @@ kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = 
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildConfig" }
+sentry-androidGradle = { id = "io.sentry.android.gradle", version.ref = "sentry-AndroidGradlePlugin" }
+sentry-kotlinCompilerGradle = { id = "io.sentry.kotlin.compiler.gradle", version.ref = "sentry-AndroidGradlePlugin" }
 
 # Plugins defined by this project
 example-multiplatform = { id = "org.hyperskill.example.kotlinMultiplatform", version = "unspecified" }

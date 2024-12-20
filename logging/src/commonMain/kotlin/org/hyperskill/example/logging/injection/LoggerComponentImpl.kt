@@ -1,4 +1,4 @@
-package org.hyperskill.example.injection
+package org.hyperskill.example.logging.injection
 
 import co.touchlab.kermit.Logger
 import org.hyperskill.example.base.model.BuildVariant

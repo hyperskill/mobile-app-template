@@ -1,4 +1,4 @@
-package org.hyperskill.example.android.base
+package org.hyperskill.example.android.framework
 
 import android.app.ActivityManager
 import android.content.Context

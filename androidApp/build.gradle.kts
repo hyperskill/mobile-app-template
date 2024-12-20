@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.sentry.androidGradle)
+    alias(libs.plugins.sentry.kotlinCompilerGradle)
 }
 
 android {
