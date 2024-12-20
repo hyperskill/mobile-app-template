@@ -7,7 +7,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.kotlinx.coroutines.core)
-                implementation(libs.kit.presentation.redux)
+                api(libs.kit.presentation.redux)
                 implementation(libs.kit.presentation.reduxCoroutines)
                 implementation(libs.androidx.lifecycle.viewmodel)
             }

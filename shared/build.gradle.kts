@@ -21,6 +21,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":base"))
+            implementation(project(":logging"))
             //put your multiplatform dependencies here
         }
     }
