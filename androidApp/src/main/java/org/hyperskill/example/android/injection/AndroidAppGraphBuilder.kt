@@ -3,9 +3,9 @@ package org.hyperskill.example.android.injection
 import android.content.Context
 import android.os.Build
 import org.hyperskill.example.android.BuildConfig
-import org.hyperskill.example.core.model.BuildVariant
-import org.hyperskill.example.core.model.Platform
-import org.hyperskill.example.core.model.PlatformType
+import org.hyperskill.example.base.model.BuildVariant
+import org.hyperskill.example.base.model.Platform
+import org.hyperskill.example.base.model.PlatformType
 
 object AndroidAppGraphBuilder {
     fun build(context: Context): AndroidAppGraph =

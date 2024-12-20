@@ -1,4 +1,4 @@
-package org.hyperskill.example.core.model
+package org.hyperskill.example.base.model
 
 data class Platform(
     val platformType: PlatformType,

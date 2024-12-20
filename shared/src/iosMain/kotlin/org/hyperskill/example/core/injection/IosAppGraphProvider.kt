@@ -1,7 +1,7 @@
 package org.hyperskill.example.core.injection
 
-import org.hyperskill.example.core.model.BuildVariant
-import org.hyperskill.example.core.model.Platform
+import org.hyperskill.example.base.model.BuildVariant
+import org.hyperskill.example.base.model.Platform
 
 object IosAppGraphProvider {
     private var instance: IosAppGraph? = null

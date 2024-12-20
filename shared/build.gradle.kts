@@ -20,6 +20,7 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
+            api(project(":base"))
             //put your multiplatform dependencies here
         }
     }

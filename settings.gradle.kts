@@ -34,6 +34,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Template_app"
+include(":base")
 include(":androidApp")
 include(":shared")
 include(":redux")

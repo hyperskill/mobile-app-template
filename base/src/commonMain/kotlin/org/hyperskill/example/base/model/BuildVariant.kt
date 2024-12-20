@@ -1,4 +1,4 @@
-package org.hyperskill.example.core.model
+package org.hyperskill.example.base.model
 
 enum class BuildVariant(val value: String) {
     DEBUG("debug"),

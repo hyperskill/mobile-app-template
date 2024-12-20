@@ -37,7 +37,6 @@ internal fun Project.configureKotlinMultiplatform(
 
     sourceSets.apply {
         commonMain.dependencies {
-            implementation(project(":parcelize"))
             //put your multiplatform dependencies here
         }
         commonTest.dependencies {
