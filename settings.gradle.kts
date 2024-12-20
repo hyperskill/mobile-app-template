@@ -37,3 +37,4 @@ rootProject.name = "Template_app"
 include(":androidApp")
 include(":shared")
 include(":redux")
+include(":parcelize")
