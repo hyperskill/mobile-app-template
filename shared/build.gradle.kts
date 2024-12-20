@@ -14,7 +14,10 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
-            isStatic = true
+            isStatic = false
+            binaryOption("bundleId", "org.hyperskill.example.shared")
+            // Add export declarations to use base module from Swift side
+            export(project(":base"))
         }
     }
     
