@@ -5,8 +5,6 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "org.hyperskill.example.buildlogic"
-
 fun Provider<PluginDependency>.toDep() = map {
     "${it.pluginId}:${it.pluginId}.gradle.plugin:${it.version}"
 }
@@ -17,6 +15,7 @@ dependencies {
     compileOnly(libs.plugins.androidLibrary.toDep())
     compileOnly(libs.plugins.kotlinMultiplatform.toDep())
     compileOnly(libs.plugins.compose.compiler.toDep())
+    compileOnly(libs.plugins.buildConfig.toDep())
 
     // Access to libs from convention plugin files
     gradle.serviceOf<DependenciesAccessors>().classes.asFiles.forEach {
@@ -35,7 +34,7 @@ gradlePlugin {
     plugins {
         register("kotlinMultiplatform"){
             id = "org.hyperskill.example.kotlinMultiplatform"
-            implementationClass = "org.hyperskill.example.plugins.KotlinMultiplatformLibraryConventionPlugin"
+            implementationClass = "org.hyperskill.example.buildlogic.plugin.KotlinMultiplatformLibraryConventionPlugin"
         }
     }
 }

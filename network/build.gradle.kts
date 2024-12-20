@@ -1,6 +1,3 @@
-import org.jetbrains.kotlin.konan.properties.loadProperties
-import org.jetbrains.kotlin.konan.properties.propertyString
-
 plugins {
     alias(libs.plugins.example.multiplatform)
     alias(libs.plugins.buildConfig)
@@ -29,16 +26,9 @@ buildConfig {
         internalVisibility = true
     }
 
-    val properties = loadProperties("${project.rootDir}/config/production.properties")
-
-    properties.keys.forEach { name ->
-        name as String
-        val propertyValue = properties.propertyString(name)
-        buildConfigField(
-            name = name,
-            value = requireNotNull(propertyValue) {
-                "Property $name is not set"
-            }
-        )
-    }
+    addBuildConfigFieldsByPrefix(
+        project = project,
+        pathToPropertiesFile = "${project.rootDir}/config/production.properties",
+        prefix = "NETWORK"
+    )
 }

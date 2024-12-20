@@ -1,14 +1,13 @@
-package org.hyperskill.example.plugins
+package org.hyperskill.example.buildlogic.plugin
 
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
-import org.hyperskill.example.alias
-import org.hyperskill.example.configureKotlinAndroid
-import org.hyperskill.example.configureKotlinMultiplatform
-import org.hyperskill.example.libs
+import alias
+import configureKotlinAndroid
+import configureKotlinMultiplatform
+import libs
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 class KotlinMultiplatformLibraryConventionPlugin: Plugin<Project> {
